@@ -1,0 +1,160 @@
+  0%|                                                                                                                                                                                                                                                 | 0/1 [00:00<?, ?it/s]Error creating call:
+Traceback (most recent call last):
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\weave\trace\op.py", line 486, in wrapper
+    call = _create_call(wrapper, *args, **kwargs)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\weave\trace\op.py", line 206, in _create_call
+    return client.create_call(
+           ^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\weave\trace\trace_sentry.py", line 211, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\weave\trace\weave_client.py", line 662, in create_call
+    check_wandb_run_matches(current_wb_run_id, self.entity, self.project)
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\weave\trace\weave_client.py", line 1391, in check_wandb_run_matches
+    raise ValueError(
+ValueError: Project Mismatch: weave and wandb must be initialized using the same project. Found wandb.init targeting project "happykbs/llm-multiagent_debate_math" and weave.init targeting project "happykbs/multiagent_debate_math". To fix, please use the same project for both library initializations.
+ (subsequent messages of this type will be suppressed)
+Error creating call:
+Traceback (most recent call last):
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\weave\trace\op.py", line 486, in wrapper
+    call = _create_call(wrapper, *args, **kwargs)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\weave\trace\op.py", line 206, in _create_call
+    return client.create_call(
+           ^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\weave\trace\trace_sentry.py", line 211, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\weave\trace\weave_client.py", line 662, in create_call
+    check_wandb_run_matches(current_wb_run_id, self.entity, self.project)
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\weave\trace\weave_client.py", line 1391, in check_wandb_run_matches
+    raise ValueError(
+ValueError: Project Mismatch: weave and wandb must be initialized using the same project. Found wandb.init targeting project "happykbs/llm-multiagent_debate_math" and weave.init targeting project "happykbs/multiagent_debate_math". To fix, please use the same project for both library initializations.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\weave\trace\op.py", line 486, in wrapper
+    call = _create_call(wrapper, *args, **kwargs)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\weave\trace\op.py", line 206, in _create_call
+    return client.create_call(
+           ^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\weave\trace\trace_sentry.py", line 211, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\weave\trace\weave_client.py", line 662, in create_call
+    check_wandb_run_matches(current_wb_run_id, self.entity, self.project)
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\weave\trace\weave_client.py", line 1391, in check_wandb_run_matches
+    raise ValueError(
+ValueError: Project Mismatch: weave and wandb must be initialized using the same project. Found wandb.init targeting project "happykbs/llm-multiagent_debate_math" and weave.init targeting project "happykbs/multiagent_debate_math". To fix, please use the same project for both library initializations.
+ (subsequent messages of this type will be suppressed)
+ChatCompletion(id='chatcmpl-ACwCVIY7rSqKJoWUELyEbe6mhoE41', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='To solve the expression \\(12 + 15 \\times 21 + 0 - 3 \\times 27\\), we need to follow the order of operations (PEMDAS/BODMAS). \n\n1. First, perform the multiplications:\n   - \\(15 \\times 21 = 315\\)\n   - \\(3 \\times 27 = 81\\)\n\n2. Now substitute these values back into the expression:\n   \\[\n   12 + 315 + 0 - 81\n   \\]\n\n3. Next, we perform the additions and subtractions from left to right:\n   - \\(12 + 315 = 327\\)\n   - \\(327 + 0 = 327\\)\n   - \\(327 - 81 = 246\\)\n\nThus, the final result is \\(246\\).', refusal=None, role='assistant', function_call=None, tool_calls=None))], created=1727647023, model='gpt-4o-mini-2024-07-18', object='chat.completion', service_tier=None, system_fingerprint='fp_f85bea6784', usage=CompletionUsage(completion_tokens=169, prompt_tokens=38, total_tokens=207, completion_tokens_details=CompletionTokensDetails(reasoning_tokens=0)))
+retrying due to an error......
+  0%|                                                                                                                                                                                                                                                 | 0/1 [00:16<?, ?it/s]
+Traceback (most recent call last):
+  File "G:\github\llm_multiagent_debate\math\gen_math.py", line 37, in generate_answer
+    completion = client.chat.completions.create(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\weave\trace\op.py", line 493, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\weave\integrations\openai\openai_sdk.py", line 291, in _wrapper
+    return fn(
+           ^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\openai\_utils\_utils.py", line 274, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\openai\resources\chat\completions.py", line 704, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\openai\_base_client.py", line 1270, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\openai\_base_client.py", line 947, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\openai\_base_client.py", line 983, in _request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\httpx\_client.py", line 926, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\httpx\_client.py", line 954, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\httpx\_client.py", line 991, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\httpx\_client.py", line 1027, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\httpx\_transports\default.py", line 236, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\httpcore\_sync\connection_pool.py", line 216, in handle_request
+    raise exc from None
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\httpcore\_sync\connection_pool.py", line 196, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\httpcore\_sync\connection.py", line 101, in handle_request
+    return self._connection.handle_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\httpcore\_sync\http11.py", line 143, in handle_request
+    raise exc
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\httpcore\_sync\http11.py", line 113, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\httpcore\_sync\http11.py", line 186, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\httpcore\_sync\http11.py", line 224, in _receive_event
+    data = self._network_stream.read(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\httpcore\_backends\sync.py", line 126, in read
+    return self._sock.recv(max_bytes)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\ssl.py", line 1233, in recv
+    return self.read(buflen)
+           ^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\ssl.py", line 1106, in read
+    return self._sslobj.read(len)
+           ^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\runpy.py", line 198, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\runpy.py", line 88, in _run_code
+    exec(code, run_globals)
+  File "c:\Users\ai\.vscode\extensions\ms-python.debugpy-2024.10.0-win32-x64\bundled\libs\debugpy\adapter/../..\debugpy\launcher/../..\debugpy\__main__.py", line 39, in <module>
+    cli.main()
+  File "c:\Users\ai\.vscode\extensions\ms-python.debugpy-2024.10.0-win32-x64\bundled\libs\debugpy\adapter/../..\debugpy\launcher/../..\debugpy/..\debugpy\server\cli.py", line 430, in main
+    run()
+  File "c:\Users\ai\.vscode\extensions\ms-python.debugpy-2024.10.0-win32-x64\bundled\libs\debugpy\adapter/../..\debugpy\launcher/../..\debugpy/..\debugpy\server\cli.py", line 284, in run_file
+    runpy.run_path(target, run_name="__main__")
+  File "c:\Users\ai\.vscode\extensions\ms-python.debugpy-2024.10.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 321, in run_path
+    return _run_module_code(code, init_globals, run_name,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\.vscode\extensions\ms-python.debugpy-2024.10.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 135, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "c:\Users\ai\.vscode\extensions\ms-python.debugpy-2024.10.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 124, in _run_code
+    exec(code, run_globals)
+  File "G:\github\llm_multiagent_debate\math\gen_math.py", line 157, in <module>
+    completion = generate_answer(agent_context)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\weave\trace\op.py", line 493, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "G:\github\llm_multiagent_debate\math\gen_math.py", line 42, in generate_answer
+    time.sleep(20)
+KeyboardInterrupt
+Exception ignored in: <module 'threading' from 'c:\\Users\\ai\\anaconda3\\envs\\base+\\Lib\\threading.py'>
+Traceback (most recent call last):
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\threading.py", line 1624, in _shutdown
+    lock.acquire()
+KeyboardInterrupt:

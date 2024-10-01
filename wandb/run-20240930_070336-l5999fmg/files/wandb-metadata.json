@@ -1,0 +1,32 @@
+{
+  "os": "Windows-11-10.0.22631-SP0",
+  "python": "3.12.5",
+  "startedAt": "2024-09-29T22:03:36.931767Z",
+  "program": "G:\\github\\llm_multiagent_debate\\math\\gen_math.py",
+  "codePath": "math\\gen_math.py",
+  "git": {
+    "remote": "https://github.com/bongsang/llm_multiagent_debate.git",
+    "commit": "28f9681e3b85d3f210ff0e10694a124631673648"
+  },
+  "email": "happykbs@gmail.com",
+  "root": "g:\\github\\llm_multiagent_debate",
+  "host": "machine",
+  "username": "ai",
+  "executable": "c:\\Users\\ai\\anaconda3\\envs\\base+\\python.exe",
+  "codePathLocal": "math\\gen_math.py",
+  "cpu_count": 24,
+  "cpu_count_logical": 32,
+  "disk": {
+    "/": {
+      "total": "2000381014016",
+      "used": "1001473220608"
+    }
+  },
+  "memory": {
+    "total": "68468830208"
+  },
+  "cpu": {
+    "count": 24,
+    "countLogical": 32
+  }
+}

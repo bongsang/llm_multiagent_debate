@@ -1,0 +1,127 @@
+  0%|                                                                                                                                                                                                                                                 | 0/1 [00:00<?, ?it/s]Error creating call:
+Traceback (most recent call last):
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\weave\trace\op.py", line 486, in wrapper
+    call = _create_call(wrapper, *args, **kwargs)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\weave\trace\op.py", line 206, in _create_call
+    return client.create_call(
+           ^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\weave\trace\trace_sentry.py", line 211, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\weave\trace\weave_client.py", line 608, in create_call
+    op_def_ref = self._save_op(unbound_op)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\weave\trace\trace_sentry.py", line 211, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\weave\trace\weave_client.py", line 1209, in _save_op
+    return self._save_object_basic(op, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\weave\trace\trace_sentry.py", line 211, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\weave\trace\weave_client.py", line 1160, in _save_object_basic
+    json_val = to_json(val, self._project_id(), self.server)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\weave\trace\serialize.py", line 39, in to_json
+    file_response = server.file_create(
+                    ^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\tenacity\__init__.py", line 336, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\tenacity\__init__.py", line 475, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\tenacity\__init__.py", line 376, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\tenacity\__init__.py", line 398, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\tenacity\__init__.py", line 478, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\weave\trace_server_bindings\remote_http_trace_server.py", line 476, in file_create
+    r.raise_for_status()
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: https://trace.wandb.ai/files/create
+ (subsequent messages of this type will be suppressed)
+🍩 https://wandb.ai/happykbs/llm-multiagent_debate_math/r/call/01923fcf-8907-78c2-ab1e-7c5f18a51a5f
+🍩 https://wandb.ai/happykbs/llm-multiagent_debate_math/r/call/01923fcf-9b0e-7b13-b548-53e39118f75e
+ChatCompletion(id='chatcmpl-ACwIu4bCY2PnNEVAdp8rZrTionBtP', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='To solve the expression \\(12 + 15 \\times 21 + 0 - 3 \\times 27\\), we need to follow the order of operations, which dictates that we perform multiplication before addition and subtraction.\n\n1. First, calculate the multiplications:\n   - \\(15 \\times 21 = 315\\)\n   - \\(3 \\times 27 = 81\\)\n\n2. Substitute these values back into the expression:\n   \\[\n   12 + 315 + 0 - 81\n   \\]\n\n3. Now, simplify the expression step by step:\n   - Start with \\(12 + 315 = 327\\)\n   - Then, \\(327 + 0 = 327\\)\n   - Finally, \\(327 - 81 = 246\\)\n\nTherefore, the result of the expression \\(12 + 15 \\times 21 + 0 - 3 \\times 27\\) is \\(246\\).', refusal=None, role='assistant', function_call=None, tool_calls=None))], created=1727647420, model='gpt-4o-mini-2024-07-18', object='chat.completion', service_tier=None, system_fingerprint='fp_f85bea6784', usage=CompletionUsage(completion_tokens=195, prompt_tokens=38, total_tokens=233, completion_tokens_details=CompletionTokensDetails(reasoning_tokens=0)))
+🍩 https://wandb.ai/happykbs/llm-multiagent_debate_math/r/call/01923fcf-9b13-7b72-8d80-f9a18c91ec6d
+🍩 https://wandb.ai/happykbs/llm-multiagent_debate_math/r/call/01923fcf-a58d-71d0-abf2-78cee6ec7155
+ChatCompletion(id='chatcmpl-ACwIy1BuyYtYNVXieroxsCwfSD9iZ', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='To solve the expression \\( 12 + 15 \\times 21 + 0 - 3 \\times 27 \\), we follow the order of operations, which is multiplication first, then addition and subtraction.\n\n1. Calculate the multiplication:\n   - \\( 15 \\times 21 = 315 \\)\n   - \\( 3 \\times 27 = 81 \\)\n\n2. Substitute these values back into the expression:\n   \\[\n   12 + 315 + 0 - 81\n   \\]\n\n3. Now perform the addition and subtraction from left to right:\n   - First, \\( 12 + 315 = 327 \\)\n   - Then, \\( 327 + 0 = 327 \\)\n   - Finally, \\( 327 - 81 = 246 \\)\n\nSo, the result of the expression \\( 12 + 15 \\times 21 + 0 - 3 \\times 27 \\) is \\( \\boxed{246} \\).', refusal=None, role='assistant', function_call=None, tool_calls=None))], created=1727647424, model='gpt-4o-mini-2024-07-18', object='chat.completion', service_tier=None, system_fingerprint='fp_f85bea6784', usage=CompletionUsage(completion_tokens=202, prompt_tokens=38, total_tokens=240, completion_tokens_details=CompletionTokensDetails(reasoning_tokens=0)))
+  0%|                                                                                                                                                                                                                                                 | 0/1 [00:09<?, ?it/s]
+Traceback (most recent call last):
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\runpy.py", line 198, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\runpy.py", line 88, in _run_code
+    exec(code, run_globals)
+  File "c:\Users\ai\.vscode\extensions\ms-python.debugpy-2024.10.0-win32-x64\bundled\libs\debugpy\adapter/../..\debugpy\launcher/../..\debugpy\__main__.py", line 39, in <module>
+    cli.main()
+  File "c:\Users\ai\.vscode\extensions\ms-python.debugpy-2024.10.0-win32-x64\bundled\libs\debugpy\adapter/../..\debugpy\launcher/../..\debugpy/..\debugpy\server\cli.py", line 430, in main
+    run()
+  File "c:\Users\ai\.vscode\extensions\ms-python.debugpy-2024.10.0-win32-x64\bundled\libs\debugpy\adapter/../..\debugpy\launcher/../..\debugpy/..\debugpy\server\cli.py", line 284, in run_file
+    runpy.run_path(target, run_name="__main__")
+  File "c:\Users\ai\.vscode\extensions\ms-python.debugpy-2024.10.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 321, in run_path
+    return _run_module_code(code, init_globals, run_name,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\.vscode\extensions\ms-python.debugpy-2024.10.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 135, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "c:\Users\ai\.vscode\extensions\ms-python.debugpy-2024.10.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 124, in _run_code
+    exec(code, run_globals)
+  File "G:\github\llm_multiagent_debate\math\gen_math.py", line 146, in <module>
+    message = construct_message(
+              ^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\weave\trace\op.py", line 486, in wrapper
+    call = _create_call(wrapper, *args, **kwargs)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\weave\trace\op.py", line 206, in _create_call
+    return client.create_call(
+           ^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\weave\trace\trace_sentry.py", line 211, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\weave\trace\weave_client.py", line 608, in create_call
+    op_def_ref = self._save_op(unbound_op)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\weave\trace\trace_sentry.py", line 211, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\weave\trace\weave_client.py", line 1209, in _save_op
+    return self._save_object_basic(op, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\weave\trace\trace_sentry.py", line 211, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\weave\trace\weave_client.py", line 1172, in _save_object_basic
+    response = self.server.obj_create(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\weave\trace_server_bindings\remote_http_trace_server.py", line 353, in obj_create
+    return self._generic_request(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\weave\trace_server_bindings\remote_http_trace_server.py", line 224, in _generic_request
+    r = self._generic_request_executor(url, req)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\tenacity\__init__.py", line 336, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\tenacity\__init__.py", line 485, in __call__
+    self.sleep(do)
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\site-packages\tenacity\nap.py", line 31, in sleep
+    time.sleep(seconds)
+KeyboardInterrupt
+Exception ignored in: <module 'threading' from 'c:\\Users\\ai\\anaconda3\\envs\\base+\\Lib\\threading.py'>
+Traceback (most recent call last):
+  File "c:\Users\ai\anaconda3\envs\base+\Lib\threading.py", line 1624, in _shutdown
+    lock.acquire()
+KeyboardInterrupt:

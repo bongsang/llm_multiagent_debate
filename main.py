@@ -1,7 +1,4 @@
-import numpy as np
 import pandas as pd
-import time
-import openai
 import gradio as gr
 import json
 from simplemath import gen_math_gradio
@@ -67,10 +64,7 @@ people_list = load_people_from_article()
 # Build the Gradio interface using Tabs
 with gr.Blocks() as demo:
     gr.Markdown(
-        "# Improving Factuality and Reasoning in Language Models through Multiagent Debate"
-    )
-    gr.Markdown(
-        "## Demo by KAIST RecSys Team Project: Yongjae Kim, Quang Minh Nguyen, Bongsang Kim"
+        "# Multiagent Debate WebUI"
     )
     with gr.Tabs():
         with gr.Tab("Math"):

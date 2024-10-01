@@ -1,3 +1,41 @@
+# Multiagent Debate WebUI
+
+### This is a Web UI implementation of the paper "Improving Factuality and Reasoning in Language Models through Multiagent Debate", designed to make it easier to use and understand.
+
+I aimed to keep the original code consistent with the content of the paper. Therefore, I only updated the OpenAI API code and added bridge functions for communication with the Gradio UI.
+
+```bash
+python main.py
+Running on local URL:  http://127.0.0.1:7860
+```
+
+### WebUI
+**Main**
+---
+![WebUI Main](docs/screenshot1.png)
+
+- You can choose a LLM model
+
+![Model](docs/screenshot6.png)
+
+**Simple Math Demo**
+---
+![Math](docs/screenshot2.png)
+
+**Graduate Student Math Demo**
+---
+![GSM](docs/screenshot3.png)
+
+**Massive Multitask Language Understanding Demo**
+---
+![MMLU](docs/screenshot4.png)
+
+**Biography Demo**
+---
+![BIO](docs/screenshot5.png)
+
+
+---
 # Improving Factuality and Reasoning in Language Models through Multiagent Debate
 
 ### [Project Page](https://composable-models.github.io/llm_debate/) | [Paper](https://arxiv.org/abs/2305.14325) 

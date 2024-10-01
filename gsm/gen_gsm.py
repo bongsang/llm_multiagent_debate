@@ -51,7 +51,7 @@ if __name__ == "__main__":
 
     generated_description = {}
 
-    questions = read_jsonl(BASE_DIR / "test.jsonl")
+    questions = read_jsonl(BASE_DIR / "data" / "test.jsonl")
     # random.shuffle(questions)
 
     for data in questions[:evaluations]:

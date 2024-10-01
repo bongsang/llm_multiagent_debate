@@ -1,7 +1,6 @@
 import pandas as pd
 from openai import OpenAI
 import json
-import numpy as np
 import random
 from pathlib import Path
 
@@ -54,7 +53,7 @@ def main(num_agents, num_rounds, num_evals, model_name, selected_question=None):
     generated_description = {}
 
     # Load questions from jsonl file
-    questions = read_jsonl(BASE_DIR / "test.jsonl")
+    questions = read_jsonl(BASE_DIR / "data" / "test.jsonl")
 
     # If a question is selected from the dropdown, use it; otherwise, shuffle questions
     if selected_question:

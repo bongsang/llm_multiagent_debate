@@ -64,7 +64,8 @@ people_list = load_people_from_article()
 # Build the Gradio interface using Tabs
 with gr.Blocks() as demo:
     gr.Markdown(
-        "# Multiagent Debate WebUI"
+        "# GPT Multi Agents Debate WebUI",
+        
     )
     with gr.Tabs():
         with gr.Tab("Math"):

@@ -3,7 +3,11 @@ import pandas as pd
 import json
 import time
 import random
-import openai
+from openai import OpenAI
+from pathlib import Path
+
+client = OpenAI()
+
 
 def construct_message(agents, question, idx):
     if len(agents) == 0:
@@ -22,14 +26,14 @@ def construct_message(agents, question, idx):
 
 
 def construct_assistant_message(completion):
-    content = completion["choices"][0]["message"]["content"]
+    content = completion.choices[0].message.content
     return {"role": "assistant", "content": content}
 
 
 def generate_answer(answer_context):
     try:
-        completion = openai.ChatCompletion.create(
-                  model="gpt-3.5-turbo-0301",
+        completion = client.chat.completions.create(
+                  model="gpt-3.5-turbo",
                   messages=answer_context,
                   n=1)
     except:
@@ -54,10 +58,12 @@ def parse_question_answer(df, ix):
     return question, answer
 
 if __name__ == "__main__":
+    BASE_DIR = Path(__file__).resolve().parent
     agents = 3
     rounds = 2
 
-    tasks = glob("/data/vision/billf/scratch/yilundu/llm_iterative_debate/mmlu/data/test/*.csv")
+    data_file = BASE_DIR / "data" / "test" / "college_computer_science_test.csv"
+    tasks = glob(data_file.as_posix())
 
     dfs = [pd.read_csv(task) for task in tasks]
 

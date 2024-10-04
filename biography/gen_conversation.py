@@ -1,7 +1,10 @@
 import json
-import openai
+from openai import OpenAI
 import random
 from tqdm import tqdm
+from pathlib import Path
+client = OpenAI()
+
 
 def parse_bullets(sentence):
     bullets_preprocess = sentence.split("\n")
@@ -48,12 +51,14 @@ def construct_message(agents, idx, person, final=False):
 
 
 def construct_assistant_message(completion):
-    content = completion["choices"][0]["message"]["content"]
+    content = completion.choices[0].message.content
     return {"role": "assistant", "content": content}
 
 
 if __name__ == "__main__":
-    with open("article.json", "r") as f:
+    BASE_DIR = Path(__file__).resolve().parent
+
+    with open(BASE_DIR / "article.json", "r") as f:
         data = json.load(f)
 
     people = sorted(data.keys())
@@ -83,13 +88,13 @@ if __name__ == "__main__":
                     agent_context.append(message)
 
                 try:
-                    completion = openai.ChatCompletion.create(
-                              model="gpt-3.5-turbo-0301",
+                    completion = client.chat.completions.create(
+                              model="gpt-3.5-turbo",
                               messages=agent_context,
                               n=1)
                 except:
-                    completion = openai.ChatCompletion.create(
-                              model="gpt-3.5-turbo-0301",
+                    completion = client.chat.completions.create(
+                              model="gpt-3.5-turbo",
                               messages=agent_context,
                               n=1)
 
@@ -97,7 +102,7 @@ if __name__ == "__main__":
                 assistant_message = construct_assistant_message(completion)
                 agent_context.append(assistant_message)
 
-            bullets = parse_bullets(completion["choices"][0]['message']['content'])
+            bullets = parse_bullets(completion.choices[0].message.content)
 
             # The LM just doesn't know this person so no need to create debates
             if len(bullets) == 1:

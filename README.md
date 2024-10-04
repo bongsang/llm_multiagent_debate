@@ -1,6 +1,6 @@
-# Multiagent Debate WebUI
+# LLM Multiagent Debate WebUI
 
-### This is a Web UI implementation of the paper "Improving Factuality and Reasoning in Language Models through Multiagent Debate", designed to make it easier to use and understand.
+### This is a Web UI implementation of the paper "Improving Factuality and Reasoning in Language Models through Multiagent Debate", designed to make it easier to use and better understanding.
 
 I aimed to keep the original code consistent with the content of the paper. Therefore, I only updated the OpenAI API code and added bridge functions for communication with the Gradio UI.
 

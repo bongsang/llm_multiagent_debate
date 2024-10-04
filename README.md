@@ -5,8 +5,11 @@
 I aimed to keep the original code consistent with the content of the paper. Therefore, I only updated the OpenAI API code and added bridge functions for communication with the Gradio UI.
 
 ```bash
+# Set "OPENAI_API_KEY" environment key
+
 python main.py
-Running on local URL:  http://127.0.0.1:7860
+
+# Running on local URL:  http://127.0.0.1:7860
 ```
 
 ### WebUI
